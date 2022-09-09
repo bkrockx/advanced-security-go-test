@@ -49,6 +49,12 @@ func main() {
 	}
 
 	http.HandleFunc("/books", handler)
+
+	// "Signin" and "Welcome" are the handlers that we will implement
+	http.HandleFunc("/signin", Signin)
+	http.HandleFunc("/welcome", Welcome)
+	http.HandleFunc("/refresh", Refresh)
+
 	http.ListenAndServe(":3000", nil)
 }
 
